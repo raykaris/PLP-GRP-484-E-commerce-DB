@@ -1,9 +1,3 @@
--- Create Database
-CREATE DATABASE IF NOT EXISTS GRP_484_ecommerce;
-
--- use the database
-USE GRP_484_ecommerce;
-
 
 -- creating tables for the database--
 
