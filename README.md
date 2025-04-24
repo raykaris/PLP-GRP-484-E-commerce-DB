@@ -54,4 +54,4 @@ This project contains the database schema and sample data for an e-commerce plat
 
 ## Contributors
 
-[Ryan](https://github.com/raykaris/)
+1. [Ryan](https://github.com/raykaris/)
