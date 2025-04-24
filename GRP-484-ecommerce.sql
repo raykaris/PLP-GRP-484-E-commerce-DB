@@ -1,37 +1,38 @@
---create database
-CREATE DATABASE IF NOT EXISTS GRP_484_ecommerce;  -- you can change the database name as per your requirement--
+-- Create Database
+CREATE DATABASE IF NOT EXISTS GRP_484_ecommerce;
 
---use database
+-- use the database
 USE GRP_484_ecommerce;
+
 
 -- creating tables for the database--
 
---table brand
+-- table brand
 CREATE TABLE brand (
     brand_id INT AUTO_INCREMENT PRIMARY KEY,
     brand_name VARCHAR(100) NOT NULL
 );
 
---table product_category
+-- table product_category
 CREATE TABLE product_category (
     category_id INT AUTO_INCREMENT PRIMARY KEY,
     category_name VARCHAR(100) NOT NULL
 );
 
---table color
+-- able color
 CREATE TABLE color (
     color_id INT AUTO_INCREMENT PRIMARY KEY,
     color_name VARCHAR(50) NOT NULL,
     hex_code VARCHAR(7)
 );
 
---table size_category
+-- table size_category
 CREATE TABLE size_category (
     size_category_id INT AUTO_INCREMENT PRIMARY KEY,
     category_name VARCHAR(100) NOT NULL
 );
 
---table size_option
+-- table size_option
 CREATE TABLE size_option (
     size_option_id INT AUTO_INCREMENT PRIMARY KEY,
     size_name VARCHAR(10) NOT NULL,
@@ -39,7 +40,7 @@ CREATE TABLE size_option (
     FOREIGN KEY (size_category_id) REFERENCES size_category(size_category_id)
 );
 
---table product
+-- table product
 CREATE TABLE product (
     product_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
@@ -50,7 +51,7 @@ CREATE TABLE product (
     FOREIGN KEY (category_id) REFERENCES product_category(category_id)
 );
 
---table product_variation
+-- table product_variation
 CREATE TABLE product_variation (
     variation_id INT AUTO_INCREMENT PRIMARY KEY,
     product_id INT,
@@ -61,7 +62,7 @@ CREATE TABLE product_variation (
     FOREIGN KEY (size_option_id) REFERENCES size_option(size_option_id)
 );
 
---table product_item
+-- table product_item
 CREATE TABLE product_item (
     product_item_id INT AUTO_INCREMENT PRIMARY KEY,
     product_id INT,
@@ -73,7 +74,7 @@ CREATE TABLE product_item (
     FOREIGN KEY (variation_id) REFERENCES product_variation(variation_id)
 );
 
---table product_image
+-- table product_image
 CREATE TABLE product_image (
     image_id INT AUTO_INCREMENT PRIMARY KEY,
     product_id INT,
@@ -81,19 +82,19 @@ CREATE TABLE product_image (
     FOREIGN KEY (product_id) REFERENCES product(product_id)
 );
 
---table attribute_category
+-- table attribute_category
 CREATE TABLE attribute_category (
     attribute_category_id INT AUTO_INCREMENT PRIMARY KEY,
     category_name VARCHAR(100) NOT NULL
 );
 
---table attribute_type
+-- table attribute_type
 CREATE TABLE attribute_type (
     attribute_type_id INT AUTO_INCREMENT PRIMARY KEY,
     type_name VARCHAR(50) NOT NULL
 );
 
---table product_attribute
+-- table product_attribute
 CREATE TABLE product_attribute (
     attribute_id INT AUTO_INCREMENT PRIMARY KEY,
     product_id INT,
