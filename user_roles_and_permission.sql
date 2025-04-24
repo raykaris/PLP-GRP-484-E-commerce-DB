@@ -4,9 +4,9 @@ CREATE ROLE ecommerce_staff;
 CREATE ROLE ecommerce_viewer;
 
 -- Grant privileges to roles
-GRANT ALL PRIVILEGES ON GRP_484_ecommerce.* TO ecommerce_admin;
-GRANT SELECT, INSERT, UPDATE ON GRP_484_ecommerce.* TO ecommerce_staff;
-GRANT SELECT ON GRP_484_ecommerce.* TO ecommerce_viewer;
+GRANT ALL PRIVILEGES ON GRP-484-ecommerce.* TO ecommerce_admin;
+GRANT SELECT, INSERT, UPDATE ON GRP-484-ecommerce.* TO ecommerce_staff;
+GRANT SELECT ON GRP-484-ecommerce.* TO ecommerce_viewer;
 
 -- Create users
 CREATE USER 'celestine'@'localhost' IDENTIFIED BY 'celestine123';
